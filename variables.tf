@@ -141,3 +141,9 @@ variable "network_tier" {
   type        = string
   default     = "STANDARD"
 }
+
+variable "wait_time" {
+  description = "Wait time before creating GCP image."
+  type        = string
+  default     = "12m"
+}

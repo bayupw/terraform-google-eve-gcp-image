@@ -109,7 +109,7 @@ resource "google_compute_instance" "this" {
 resource "time_sleep" "this" {
   count = var.create_vpc_vm ? 1 : 0
 
-  create_duration = "12m"
+  create_duration = var.wait_time
   depends_on      = [google_compute_instance.this]
 }
 
