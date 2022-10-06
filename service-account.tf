@@ -3,7 +3,7 @@ resource "google_service_account" "this" {
   count = var.create_service_account ? 1 : 0
 
   project      = var.project_id
-  account_id   = local.service_account_name
+  account_id   = local.service_account
   display_name = "Storage Service Account for EVE Image Upload"
 }
 
