@@ -7,5 +7,6 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.
 sudo apt-get update
 sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 sudo service docker start
+#run docker and copy image to storage bucket
 sudo docker run lfedge/eve:${eve}-kvm-amd64 -f gcp live > /tmp/${image}.tar.gz
 gsutil cp /tmp/${image}.tar.gz gs://${bucket}/${image}.tar.gz
