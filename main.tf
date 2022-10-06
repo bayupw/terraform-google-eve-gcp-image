@@ -134,5 +134,5 @@ resource "google_compute_image" "this" {
 locals {
   iap_range       = ["35.235.240.0/20"] # https://cloud.google.com/iap/docs/tcp-by-host
   bucket          = var.create_storage_bucket ? google_storage_bucket.this[0].id : var.bucket_name
-  service_account = var.create_service_account ? google_service_account.this[0].email : var.service_account_email
+  service_account = var.create_service_account ? var.service_account_name : var.service_account_email
 }
