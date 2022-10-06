@@ -1,5 +1,5 @@
 module "eve-gcp-image" {
-  source = "bayupw/terraform-google-eve-gcp-image/google"
+  source = "bayupw/eve-gcp-image/google"
   version = "1.0.0"
 
   project_id  = "bwibowo-01"
