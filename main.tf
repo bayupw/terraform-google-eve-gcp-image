@@ -100,7 +100,7 @@ resource "google_compute_instance" "this" {
 
   service_account {
     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
-    email  = local.service_account
+    email  = local.vm_service_account
     scopes = ["cloud-platform"]
   }
 }
@@ -135,4 +135,5 @@ locals {
   iap_range       = ["35.235.240.0/20"] # https://cloud.google.com/iap/docs/tcp-by-host
   bucket          = var.create_storage_bucket ? google_storage_bucket.this[0].id : var.bucket_name
   service_account = var.create_service_account ? var.service_account_name : var.service_account_email
+  vm_service_account = var.create_service_account ? google_service_account.this[0].email : var.service_account_email
 }
