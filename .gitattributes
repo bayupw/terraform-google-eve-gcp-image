@@ -1,0 +1,2 @@
+# Set shell script to LF line endings on checkout.
+*.sh eol=lf
