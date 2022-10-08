@@ -40,6 +40,12 @@ variable "create_gcp_image" {
   default     = true
 }
 
+variable "shutdown_vm" {
+  description = "Set to true to shutdown gcp vm after uploading image."
+  type        = bool
+  default     = false
+}
+
 variable "service_account_name" {
   description = "New service account name."
   type        = string

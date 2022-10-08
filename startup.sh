@@ -11,3 +11,6 @@ sudo service docker start
 #run eve and copy image to storage bucket
 sudo docker run lfedge/eve:${eve}-kvm-amd64 -f gcp live > /tmp/${image}.tar.gz
 gsutil cp /tmp/${image}.tar.gz gs://${bucket}/${image}.tar.gz
+
+#option to shutdown vm after uploading image
+${shutdown}

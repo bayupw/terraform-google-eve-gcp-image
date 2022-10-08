@@ -69,6 +69,7 @@ data "template_file" "this" {
     eve    = var.eve_version
     image  = var.eve_image_name
     bucket = local.bucket
+    shutdown = var.shutdown_vm ? "sudo shutdown -h now" : ""
   }
 }
 
